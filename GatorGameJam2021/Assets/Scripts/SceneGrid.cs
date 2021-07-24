@@ -8,6 +8,8 @@ public class SceneGrid : MonoBehaviour
     public Sprite[] column0;
     public Sprite[] column1;
     public Tile[,] grid;
+    const int xMax = 2;
+    const int yMax = 2;
 
     Tile GetTile(string name)
     {
@@ -18,11 +20,18 @@ public class SceneGrid : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        grid = new Tile [2, 2] {
-            {GetTile("Entrance"), null},
-            {null,                null}
+        grid = new Tile[xMax, yMax] {
+            {GetTile("Entrance"), GetTile("2")},
+            {GetTile("3"),        GetTile("4")}
         };
-        Debug.Log(grid[0,0]);
+        for (int i = 0; i < xMax; i++) {
+            for (int j = 0; j < yMax; j++) {
+                if(grid[i, j] != null) {
+                    grid[i, j].x = i;
+                    grid[i, j].y = j;
+                }
+            }
+        } 
     }
 
     // Update is called once per frame
