@@ -24,8 +24,9 @@ public class Player : MonoBehaviour
     {
         path.Push(tile);
         current = path.Peek();
+        Debug.Log(location.image.sprite);
         location.image.sprite = tile.sprite;            
-        location.text.text = tile.text;
+        //location.text.text = tile.text;
     }
 
     void Awake()
@@ -38,9 +39,9 @@ public class Player : MonoBehaviour
     {
         path = new Stack<Tile>();
         map = GameObject.Find("SceneGrid").GetComponent<SceneGrid>().grid;
-        GameObject temp = GameObject.Find("Location");
+        GameObject temp = GameObject.Find("Canvas");
         location.image = temp.transform.Find("Image").GetComponent<Image>();
-        location.text = temp.transform.Find("Text").GetComponent<Text>();
+        //location.text = temp.transform.Find("Text").GetComponent<Text>();
         path.Push(map[0,0]);
         current = path.Peek();
     }

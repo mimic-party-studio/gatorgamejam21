@@ -26,17 +26,24 @@ public class Tile : MonoBehaviour
     Dictionary<string, string> take;
 
     void Awake() {
-        foreach(dictionaryItem item in useList)
-        {
-            use[item.item] = item.result;
+        if(useList == null) {
+            foreach(dictionaryItem item in useList)
+            {
+                use[item.item] = item.result;
+            }
+
         }
-        foreach(dictionaryItem item in lookList)
-        {
-            look[item.item] = item.result;
+        if(lookList == null) {
+            foreach(dictionaryItem item in lookList)
+            {
+                look[item.item] = item.result;
+            }
         }
-        foreach(dictionaryItem item in takeList)
-        {
-            take[item.item] = item.result;
+        if(takeList == null) {
+            foreach(dictionaryItem item in takeList)
+            {
+                take[item.item] = item.result;
+            }
         }
     }
 }
