@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -20,7 +21,14 @@ public class Player : MonoBehaviour
     public Tile[,] map;
     locationUI location;
     public Tile current;
-    AudioSource transitionSound;
+    AudioSource audioPlayer;
+    public AudioClip monsterSound;
+    public AudioClip transitionSound;
+    public AudioClip deathSound;
+    Sprite tempSprite;
+    public Sprite deathSprite;
+    public Monster monster;
+    Coroutine currRoutine;
 
      public void changeLocation(Tile tile)
     {
@@ -29,22 +37,29 @@ public class Player : MonoBehaviour
         current = path.Peek();
         //Debug.Log(location.image.sprite);
         location.image.sprite = tile.sprite;  
-        transitionSound.Play();     
+        audioPlayer.Play();     
         //Debug.Log(location.image.sprite);   
         //location.text.text = tile.text;
+        monster.aggressionIndex += 1;
     }
 
     public void changeLocBack(Tile tile)
     {
         current= path.Peek();
         location.image.sprite = tile.sprite;
-        transitionSound.Play();     
+        audioPlayer.Play();     
 
     }
 
-    public void hideLoc(Sprite sprite)
+    public void hideLoc(Sprite sprite1, Sprite sprite2)
     {
-        location.image.sprite = sprite;
+        tempSprite = location.image.sprite;
+        currRoutine = StartCoroutine(HideScreen(sprite1, sprite2));
+    }
+
+    public void die()
+    {
+        StartCoroutine(DeathScreen(deathSprite));
     }
 
 
@@ -57,31 +72,40 @@ public class Player : MonoBehaviour
         //location.text = temp.transform.Find("Text").GetComponent<Text>();
         path.Push(map[0,0]);
         current = map[0,0];
-        transitionSound = gameObject.GetComponent<AudioSource>();
+        audioPlayer = gameObject.GetComponent<AudioSource>();
     }
 
-    void Update()
+    IEnumerator HideScreen(Sprite sprite1, Sprite sprite2)
     {
-        //Press space to change the Sprite of the Image
-       /* if (Input.GetKeyDown(KeyCode.W))
-        {
-            changeLocation(map[current.x-1, current.y]);
+        location.image.sprite = sprite1;
+        yield return new WaitForSeconds(2);
+        location.image.sprite = sprite2;
+        audioPlayer.clip = monsterSound;
+        audioPlayer.volume = 0.1f;
+        audioPlayer.Play();
+        yield return new WaitForSeconds(audioPlayer.clip.length);
+        location.image.sprite = sprite1;
+        yield return new WaitForSeconds(2);
+        audioPlayer.volume = 1f;
+        audioPlayer.clip = transitionSound;
+        location.image.sprite = tempSprite;
+        hidden = false;
+    }
+    IEnumerator DeathScreen(Sprite dead)
+    {
+        if(currRoutine != null) {
+            StopCoroutine(currRoutine);
         }
-        else if (Input.GetKeyDown(KeyCode.D))
-        {
-            changeLocation(map[current.x+1, current.y]);
-
-        }
-        else if (Input.GetKeyDown(KeyCode.S))
-        {
-            changeLocation(map[current.x, current.y-1]);
-        }
-        else if (Input.GetKeyDown(KeyCode.A))
-        {
-            changeLocation(map[current.x, current.y+1]);
-        }*/
-
+        GameObject.Find("AudioSource").GetComponent<AudioSource>().Stop();
+        location.image.sprite = dead;
+        audioPlayer.clip = deathSound;
+        audioPlayer.Play();
+        yield return new WaitForSeconds(5);
+        audioPlayer.clip = transitionSound;
+        hidden = false;
+        SceneManager.LoadScene("start_screen");
 
     }
+
 
 }

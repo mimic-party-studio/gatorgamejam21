@@ -7573,9 +7573,13 @@ MonoBehaviour:
   latest5: {fileID: 1821596670}
   player: {fileID: 1756386182}
   planter: {fileID: 21300000, guid: 62b3f61e6c83a8f4ca41e48cb0dd8f75, type: 3}
+  planterMonster: {fileID: 0}
   bush: {fileID: 21300000, guid: a4f1556f82db0ee4f8fdcba991ae9e5f, type: 3}
+  bushMonster: {fileID: 0}
   box: {fileID: 21300000, guid: c4ec11f8ae01a4c4dbb7f79caffc6744, type: 3}
+  boxMonster: {fileID: 0}
   trashcan: {fileID: 21300000, guid: b1d752922fc85a648aca7694d5fbe1a7, type: 3}
+  trashcanMonster: {fileID: 0}
 --- !u!4 &1171827405
 Transform:
   m_ObjectHideFlags: 0
@@ -11275,6 +11279,8 @@ MonoBehaviour:
   id: 0
   hidden: 0
   current: {fileID: 0}
+  monsterSound: {fileID: 8300000, guid: c8c2f29943a9ef840b4b383e5ad2ba8e, type: 3}
+  transitionSound: {fileID: 8300000, guid: c81e6a5451b3a434d80cf8c21aa78db6, type: 3}
 --- !u!4 &1756386183
 Transform:
   m_ObjectHideFlags: 0

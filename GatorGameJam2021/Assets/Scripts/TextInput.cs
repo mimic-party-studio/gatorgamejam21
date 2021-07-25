@@ -14,9 +14,13 @@ public class TextInput : MonoBehaviour
     public Text latest5;
     public Player player;
     public Sprite planter;
+    public Sprite planterMonster;
     public Sprite bush;
+    public Sprite bushMonster;
     public Sprite box;
+    public Sprite boxMonster;
     public Sprite trashcan;
+    public Sprite trashcanMonster;
 
     AudioSource temp;
 
@@ -65,6 +69,10 @@ public class TextInput : MonoBehaviour
         }
         else if(args[0].Equals("move"))
         {
+            if(player.hidden) {
+                player.die();
+                return;
+            }
             if(player.current.moveList != null && System.Array.IndexOf(player.current.moveList, args[1]) > -1)
             {
                 Tile newTile;
@@ -94,22 +102,19 @@ public class TextInput : MonoBehaviour
             {
                 player.hidden = true;
                 if(args[1] == "planter") {
-                    player.hideLoc(planter);
+                    player.hideLoc(planter, planterMonster);
                 }
                 else if(args[1] == "bush") {
-                    player.hideLoc(bush);
+                    player.hideLoc(bush, bushMonster);
 
                 }
                 else if(args[1] == "box") {
-                    player.hideLoc(box);
+                    player.hideLoc(box, boxMonster);
 
                 }
                 else if(args[1] == "trashcan") {
-                    player.hideLoc(trashcan);
+                    player.hideLoc(trashcan, trashcanMonster);
                 }
-                
-                StartCoroutine(ExampleCoroutine());
-
             }
         }
         else
@@ -133,17 +138,5 @@ public class TextInput : MonoBehaviour
     void Start() 
     {
         temp = gameObject.GetComponent<AudioSource>();
-    }
-    
-    IEnumerator ExampleCoroutine()
-    {
-        //Print the time of when the function is first called.
-        Debug.Log("Started Coroutine at timestamp : " + Time.time);
-
-        //yield on a new YieldInstruction that waits for 5 seconds.
-        yield return new WaitForSeconds(5);
-
-        //After we have waited 5 seconds print the time again.
-        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
     }
 }
