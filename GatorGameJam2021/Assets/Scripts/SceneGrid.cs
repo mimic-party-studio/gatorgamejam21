@@ -12,6 +12,7 @@ public class SceneGrid : MonoBehaviour
 
     Tile GetTile(string name)
     {
+        Debug.Log(name);
         Tile tile = gameObject.transform.Find(name).GetComponent<Tile>();
         return tile;
     }
@@ -19,7 +20,7 @@ public class SceneGrid : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(SceneManager.GetActiveScene().name == "first_area") {
+        if(SceneManager.GetActiveScene().name == "game_UI") {
             
             grid = new Tile[3, 3] {
                 {GetTile("Entrance"), GetTile("SAC Hall 1"), null},
@@ -35,9 +36,9 @@ public class SceneGrid : MonoBehaviour
             }
         } 
         }
-        if(SceneManager.GetActiveScene().name == "second_area") {
+        if(SceneManager.GetActiveScene().name == "UI_second") {
             grid = new Tile[7, 2] {
-                {GetTile("Entrance/Exit"), null},
+                {GetTile("Entrance-Exit"), null},
                 {GetTile("Hallway 1"), null},
                 {GetTile("Hallway 2"), GetTile("Hallway 3")},
                 {GetTile("Room Entrance"), null},
@@ -54,13 +55,13 @@ public class SceneGrid : MonoBehaviour
             }
         } 
         }
-        if(SceneManager.GetActiveScene().name == "outside_area") {
+        if(SceneManager.GetActiveScene().name == "UI_outside") {
             grid = new Tile[10, 3] {
                 {GetTile("Entrance"), GetTile("Outside of SAC"), null},
                 {GetTile("Dead End 1"), GetTile("Open Area"), null},
                 {GetTile("Grassy Sidepath 1"), GetTile("Crossroads"), null},
                 {GetTile("Grassy Sidepath 2"), GetTile("Street 1"), null},
-                {GetTile(null), GetTile("Street 2"), null},
+                {null, GetTile("Street 2"), null},
                 {GetTile("Plant Path 1"), GetTile("Street 3"), null},
                 {GetTile("Plant Path 2"), GetTile("Street 4"), null},
                 {GetTile("Grassy Sidepath 2"), GetTile("Crossroads 2"), GetTile("Stairs Path")},
@@ -76,6 +77,9 @@ public class SceneGrid : MonoBehaviour
             }
         } 
         }
+        //Player temp = GameObject.Find("GameScreen").GetComponent<Player>();
+        //temp.path.Push(grid[0,0]);
+        //temp.current = temp.path.Peek();
     }
 
     // Update is called once per frame

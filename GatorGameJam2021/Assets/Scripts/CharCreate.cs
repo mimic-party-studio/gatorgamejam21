@@ -10,6 +10,7 @@ public class CharCreate : MonoBehaviour
     public GameObject nextscreen;
     public GameObject infoscreen;
     public GameObject gamescreen;
+    public GameObject playerobj;
     public Text nexttext;
     public Text codetext;
     public Text infotext;
@@ -98,6 +99,7 @@ public class CharCreate : MonoBehaviour
         {
             infoscreen.SetActive(false);
             gamescreen.SetActive(true);
+            playerobj.SetActive(true);
         }
     }
 

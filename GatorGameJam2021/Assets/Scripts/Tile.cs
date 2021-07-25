@@ -27,22 +27,22 @@ public class Tile : MonoBehaviour
 
     void Awake() {
         if(useList == null) {
-            foreach(dictionaryItem item in useList)
+            foreach(dictionaryItem theitem in useList)
             {
-                use[item.item] = item.result;
+                use[theitem.item] = theitem.result;
             }
 
         }
         if(lookList == null) {
-            foreach(dictionaryItem item in lookList)
+            foreach(dictionaryItem theitem in lookList)
             {
-                look[item.item] = item.result;
+                look[theitem.item] = theitem.result;
             }
         }
         if(takeList == null) {
-            foreach(dictionaryItem item in takeList)
+            foreach(dictionaryItem theitem in takeList)
             {
-                take[item.item] = item.result;
+                take[theitem.item] = theitem.result;
             }
         }
     }

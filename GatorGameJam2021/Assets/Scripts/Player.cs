@@ -25,22 +25,17 @@ public class Player : MonoBehaviour
         path.Push(tile);
         current = path.Peek();
         Debug.Log(location.image.sprite);
-        location.image.sprite = tile.sprite;            
+        location.image.sprite = tile.sprite;         
+        Debug.Log(location.image.sprite);   
         //location.text.text = tile.text;
     }
 
-    void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
-
-    // Start is called before the first frame update
-    void Start()
+    public void OnEnable()
     {
         path = new Stack<Tile>();
         map = GameObject.Find("SceneGrid").GetComponent<SceneGrid>().grid;
-        GameObject temp = GameObject.Find("Canvas");
-        location.image = temp.transform.Find("Image").GetComponent<Image>();
+        GameObject temp = GameObject.Find("GameScreen");
+        location.image = temp.transform.Find("LocationImage").GetComponent<Image>();
         //location.text = temp.transform.Find("Text").GetComponent<Text>();
         path.Push(map[0,0]);
         current = path.Peek();
@@ -49,20 +44,20 @@ public class Player : MonoBehaviour
     void Update()
     {
         //Press space to change the Sprite of the Image
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             changeLocation(map[current.x-1, current.y]);
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        else if (Input.GetKeyDown(KeyCode.D))
         {
             changeLocation(map[current.x+1, current.y]);
 
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.GetKeyDown(KeyCode.S))
         {
             changeLocation(map[current.x, current.y-1]);
         }
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
+        else if (Input.GetKeyDown(KeyCode.A))
         {
             changeLocation(map[current.x, current.y+1]);
         }

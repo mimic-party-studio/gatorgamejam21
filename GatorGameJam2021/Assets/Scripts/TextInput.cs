@@ -18,7 +18,7 @@ public class TextInput : MonoBehaviour
         cmdinput.text = "> " + cmdinput.text;
         pushUp();
 
-        if(args.Length > 2)
+        /*if(args.Length > 2)
         {
             cmdinput.text = "that's too complicated. i should use less words.";
         }
@@ -54,7 +54,7 @@ public class TextInput : MonoBehaviour
         {
             cmdinput.text = "i don't know how to "+ args[0]+".";
         }
-        pushUp();
+        pushUp();*/
         return;
     }
 
