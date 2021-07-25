@@ -12,7 +12,6 @@ public class SceneGrid : MonoBehaviour
 
     Tile GetTile(string name)
     {
-        Debug.Log(name);
         Tile tile = gameObject.transform.Find(name).GetComponent<Tile>();
         return tile;
     }
