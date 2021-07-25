@@ -9,6 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/start_screen.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/first_area.unity
+    path: Assets/Scenes/game_UI.unity
     guid: dc4330cce13065d4bb6c6b57e7892804
+  - enabled: 1
+    path: Assets/Scenes/UI_outside.unity
+    guid: 5ddb66ff661c7ae419e66e59c75d42fd
+  - enabled: 1
+    path: Assets/Scenes/game_UI_TWO.unity
+    guid: 3ebb124a621603847a05cf11a08e3b4f
+  - enabled: 1
+    path: Assets/Scenes/UI_second.unity
+    guid: f7fd5d8a5e2ed5d48b22ad335e53c3ba
   m_configObjects: {}
