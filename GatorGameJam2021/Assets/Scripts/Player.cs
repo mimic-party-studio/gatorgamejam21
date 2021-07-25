@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     public Tile[,] map;
     locationUI location;
     public Tile current;
+    AudioSource transitionSound;
 
      public void changeLocation(Tile tile)
     {
@@ -27,7 +28,8 @@ public class Player : MonoBehaviour
         path.Push(tile);
         current = path.Peek();
         //Debug.Log(location.image.sprite);
-        location.image.sprite = tile.sprite;         
+        location.image.sprite = tile.sprite;  
+        transitionSound.Play();     
         //Debug.Log(location.image.sprite);   
         //location.text.text = tile.text;
     }
@@ -36,6 +38,8 @@ public class Player : MonoBehaviour
     {
         current= path.Peek();
         location.image.sprite = tile.sprite;
+        transitionSound.Play();     
+
     }
 
     public void hideLoc(Sprite sprite)
@@ -53,6 +57,7 @@ public class Player : MonoBehaviour
         //location.text = temp.transform.Find("Text").GetComponent<Text>();
         path.Push(map[0,0]);
         current = map[0,0];
+        transitionSound = gameObject.GetComponent<AudioSource>();
     }
 
     void Update()

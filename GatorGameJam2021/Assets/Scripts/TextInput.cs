@@ -18,6 +18,8 @@ public class TextInput : MonoBehaviour
     public Sprite box;
     public Sprite trashcan;
 
+    AudioSource temp;
+
     public void onInput()
     {
         string [] args = cmdinput.text.Split(' ');
@@ -33,6 +35,7 @@ public class TextInput : MonoBehaviour
             if(player.current.use != null && player.current.use.ContainsKey(args[1]))
             {
                 if(args[1] == "door") {
+                    temp.Play();
                     SceneManager.LoadScene(player.current.use[args[1]]);
                 }
                 else if(args[1] == "plant") {
@@ -125,6 +128,11 @@ public class TextInput : MonoBehaviour
         latest2.text = latest1.text;
         latest1.text = cmdinput.text;
         cmdinput.text = "";
+    }
+
+    void Start() 
+    {
+        temp = gameObject.GetComponent<AudioSource>();
     }
     
     IEnumerator ExampleCoroutine()
