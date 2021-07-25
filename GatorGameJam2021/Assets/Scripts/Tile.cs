@@ -21,29 +21,27 @@ public class Tile : MonoBehaviour
     public dictionaryItem[] useList;
     public dictionaryItem[] lookList;
     public dictionaryItem[] takeList;
-    Dictionary<string, string> use;
-    Dictionary<string, string> look;
-    Dictionary<string, string> take;
+    public Dictionary<string, string> use;
+    public Dictionary<string, string> look;
+    public Dictionary<string, string> take;
 
     void Awake() {
-        if(useList == null) {
-            foreach(dictionaryItem theitem in useList)
-            {
-                use[theitem.item] = theitem.result;
-            }
+        use = new Dictionary<string, string>();
+        foreach(dictionaryItem theitem in useList)
+        {
+            use.Add(theitem.item, theitem.result);
+        }
+        look = new Dictionary<string, string>();
 
+        foreach(dictionaryItem theitem in lookList)
+        {
+            look.Add(theitem.item, theitem.result);
         }
-        if(lookList == null) {
-            foreach(dictionaryItem theitem in lookList)
-            {
-                look[theitem.item] = theitem.result;
-            }
-        }
-        if(takeList == null) {
-            foreach(dictionaryItem theitem in takeList)
-            {
-                take[theitem.item] = theitem.result;
-            }
+        take = new Dictionary<string, string>();
+
+        foreach(dictionaryItem theitem in takeList)
+        {
+            take.Add(theitem.item, theitem.result);
         }
     }
 }

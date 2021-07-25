@@ -8323,6 +8323,7 @@ MonoBehaviour:
   latest3: {fileID: 1300996121}
   latest4: {fileID: 1636715325}
   latest5: {fileID: 1821596670}
+  player: {fileID: 1756386182}
 --- !u!4 &1171827405
 Transform:
   m_ObjectHideFlags: 0
@@ -9444,7 +9445,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: You can move <b>FORWARD</b>, or you can move <b>RIGHT</b>.
 --- !u!222 &1331348791
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10745,12 +10746,13 @@ MonoBehaviour:
   x: 0
   y: 0
   sprite: {fileID: 21300000, guid: eaafefe8c07858243a9aa036025646ef, type: 3}
-  text: You arrive at the exit of the SAC. Moving <b>FORWARD</b> will take you outside.
+  text: You arrive at the exit of the SAC. <b>USE</b>ing the door will take you outside.
   hide: 
   moveList:
-  - forward
   - back
-  useList: []
+  useList:
+  - item: door
+    result: UI_outside
   lookList: []
   takeList: []
 --- !u!1 &1581783251
@@ -10889,7 +10891,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4576d6d6e898d7348bbbc1b138d27b4c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 40919432116d45a468f29da7a10f87bd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

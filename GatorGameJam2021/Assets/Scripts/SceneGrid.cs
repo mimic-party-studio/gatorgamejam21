@@ -19,7 +19,7 @@ public class SceneGrid : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(SceneManager.GetActiveScene().name == "game_UI") {
+        if(SceneManager.GetActiveScene().name == "game_UI" || SceneManager.GetActiveScene().name == "game_UI_TWO") {
             
             grid = new Tile[3, 3] {
                 {GetTile("Entrance"), GetTile("SAC Hall 1"), null},

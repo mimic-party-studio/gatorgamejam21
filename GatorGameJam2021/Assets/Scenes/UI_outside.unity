@@ -1215,11 +1215,14 @@ MonoBehaviour:
   x: 0
   y: 0
   sprite: {fileID: 21300000, guid: d6d79558d9b83df41ac5a5bc7505d587, type: 3}
-  text: You arrive outside the SAC. You can move <b>RIGHT</b>.
+  text: You arrive outside the SAC. You can move <b>RIGHT</b>.  I guess I can go
+    back in by <b>USE</b>ing the door, though.
   hide: 
   moveList:
   - right
-  useList: []
+  useList:
+  - item: door
+    result: game_UI_TWO
   lookList: []
   takeList: []
 --- !u!1 &75823193
@@ -1862,12 +1865,14 @@ MonoBehaviour:
   x: 0
   y: 0
   sprite: {fileID: 21300000, guid: fe16696cd03a20a4381a3790662bdabd, type: 3}
-  text: In front of you is the entrance to the lab. You may move <b>FORWARD</b>.
+  text: In front of you is the entrance to the lab. You may <b>USE</b> the door to
+    enter the lab.
   hide: 
   moveList:
   - back
-  - forward
-  useList: []
+  useList:
+  - item: door
+    result: UI_second
   lookList: []
   takeList: []
 --- !u!1 &182177537
@@ -5664,6 +5669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerobj: {fileID: 1756386181}
+  textobj: {fileID: 1171827403}
 --- !u!1 &782845339
 GameObject:
   m_ObjectHideFlags: 0
@@ -7564,6 +7570,11 @@ MonoBehaviour:
   latest3: {fileID: 1300996121}
   latest4: {fileID: 1636715325}
   latest5: {fileID: 1821596670}
+  player: {fileID: 1756386182}
+  planter: {fileID: 21300000, guid: 62b3f61e6c83a8f4ca41e48cb0dd8f75, type: 3}
+  bush: {fileID: 21300000, guid: a4f1556f82db0ee4f8fdcba991ae9e5f, type: 3}
+  box: {fileID: 21300000, guid: c4ec11f8ae01a4c4dbb7f79caffc6744, type: 3}
+  trashcan: {fileID: 21300000, guid: b1d752922fc85a648aca7694d5fbe1a7, type: 3}
 --- !u!4 &1171827405
 Transform:
   m_ObjectHideFlags: 0
@@ -8492,7 +8503,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: You arrive outside the SAC. You can move <b>RIGHT</b>.  I guess I can go
+    back in by <b>USE</b>ing the door, though.
 --- !u!222 &1331348791
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11036,6 +11048,7 @@ MonoBehaviour:
   plant: 0
   progress: 0
   id: 0
+  hidden: 0
   current: {fileID: 0}
 --- !u!4 &1756386183
 Transform:
