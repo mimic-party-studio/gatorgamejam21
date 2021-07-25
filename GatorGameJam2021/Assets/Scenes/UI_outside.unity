@@ -7573,13 +7573,13 @@ MonoBehaviour:
   latest5: {fileID: 1821596670}
   player: {fileID: 1756386182}
   planter: {fileID: 21300000, guid: 62b3f61e6c83a8f4ca41e48cb0dd8f75, type: 3}
-  planterMonster: {fileID: 0}
+  planterMonster: {fileID: 21300000, guid: 03eedce13acefff45b42a7744f14fe39, type: 3}
   bush: {fileID: 21300000, guid: a4f1556f82db0ee4f8fdcba991ae9e5f, type: 3}
-  bushMonster: {fileID: 0}
+  bushMonster: {fileID: 21300000, guid: 8d94e77339fc6554b8310a1142154362, type: 3}
   box: {fileID: 21300000, guid: c4ec11f8ae01a4c4dbb7f79caffc6744, type: 3}
-  boxMonster: {fileID: 0}
+  boxMonster: {fileID: 21300000, guid: 7ea72455764ee2040bf7810b46c4af56, type: 3}
   trashcan: {fileID: 21300000, guid: b1d752922fc85a648aca7694d5fbe1a7, type: 3}
-  trashcanMonster: {fileID: 0}
+  trashcanMonster: {fileID: 21300000, guid: e54a10362d28e4c4a968ce2a4821e51c, type: 3}
 --- !u!4 &1171827405
 Transform:
   m_ObjectHideFlags: 0
@@ -10164,6 +10164,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1563374452}
   m_CullTransparentMesh: 1
+--- !u!1 &1578011254
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1578011256}
+  - component: {fileID: 1578011255}
+  m_Layer: 0
+  m_Name: Monster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1578011255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578011254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 612b6a4a1097294488149c4820a04528, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aggressionIndex: 0
+  aggressionChart: 
+--- !u!4 &1578011256
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578011254}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 453.62054, y: 259.5745, z: -889.48706}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1593053730
 GameObject:
   m_ObjectHideFlags: 0
@@ -11281,6 +11326,9 @@ MonoBehaviour:
   current: {fileID: 0}
   monsterSound: {fileID: 8300000, guid: c8c2f29943a9ef840b4b383e5ad2ba8e, type: 3}
   transitionSound: {fileID: 8300000, guid: c81e6a5451b3a434d80cf8c21aa78db6, type: 3}
+  deathSound: {fileID: 8300000, guid: c90535faee677a24b9edcba21b40b505, type: 3}
+  deathSprite: {fileID: 21300000, guid: fa2a527bdae5a6648ba7aa8db82836ac, type: 3}
+  monster: {fileID: 1578011255}
 --- !u!4 &1756386183
 Transform:
   m_ObjectHideFlags: 0
