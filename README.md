@@ -13,7 +13,13 @@ This game was created by Ash Comiskey, Michaela Isaacs, and Alaine Spade. It was
 ## CREDITS
 
 **\_ANALOGUE** was created in Unity 2020 3.14f1.
+
 3D models were created in Blender.
+
 Photographs were taken by the team on the University of Florida campus. 
+
 The font used is VCR OSD MONO.
+
 The phone graphic is from VectorStock.
+
+The music and sound effects are from Humble's Music & Sound FX 2 Software Bundle.
