@@ -1539,7 +1539,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1782221642}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &165819422
 MonoBehaviour:
@@ -1928,7 +1928,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1782221642}
-  m_RootOrder: 1
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &210889697
 MonoBehaviour:
@@ -1945,7 +1945,8 @@ MonoBehaviour:
   x: 0
   y: 0
   sprite: {fileID: 21300000, guid: 8d822bcf26ad8864998be84ef4e2eeff, type: 3}
-  text: 'In front of you is a <b>DOOR</b>. '
+  text: here's the SAC <b>door</b>. now that i have the code, i should be able to
+    use it.
   hide: 
   moveList:
   - back
@@ -2443,58 +2444,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248481772}
   m_CullTransparentMesh: 1
---- !u!1 &257696755
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 257696756}
-  - component: {fileID: 257696757}
-  m_Layer: 0
-  m_Name: ALAI
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &257696756
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 257696755}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 447.45032, y: 231.43137, z: -1217.3457}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &257696757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 257696755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02bf421c6a0331341ae6c93fb63f9259, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firstscene: 0
-  secondscene: 0
-  firstchoice: {fileID: 1494513911}
-  secondchoice: {fileID: 1563374454}
-  fctext: {fileID: 1481219804}
-  sctext: {fileID: 381298034}
-  aldialogue: {fileID: 366711642}
-  mydialogue: {fileID: 1442219862}
-  currentint: 
 --- !u!1 &278091000
 GameObject:
   m_ObjectHideFlags: 0
@@ -4304,6 +4253,133 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 551699269}
   m_CullTransparentMesh: 1
+--- !u!1 &554340926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 554340928}
+  - component: {fileID: 554340927}
+  m_Layer: 0
+  m_Name: AudioSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &554340927
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554340926}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 8fcd4e6d3be7d314abde4e8d79cc05ec, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.109
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &554340928
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554340926}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 453.62054, y: 259.5745, z: -889.48706}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &559995250
 GameObject:
   m_ObjectHideFlags: 0
@@ -5936,7 +6012,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1782221642}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &859937458
 MonoBehaviour:
@@ -5953,7 +6029,7 @@ MonoBehaviour:
   x: 0
   y: 0
   sprite: {fileID: 21300000, guid: b1c654accb89ec24ea28d6ba4da2b3cb, type: 3}
-  text: You are in a hallway. It looks like the only path is <b>FORWARD</b>.
+  text: i'm in the hallway. i can move <b>forward</b> toward the door.
   hide: 
   moveList:
   - forward
@@ -6637,7 +6713,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1009956475
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6965,10 +7041,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1024, y: 576}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -7026,7 +7102,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1782221642}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1083898189
 MonoBehaviour:
@@ -7043,11 +7119,11 @@ MonoBehaviour:
   x: 0
   y: 0
   sprite: {fileID: 21300000, guid: 40919432116d45a468f29da7a10f87bd, type: 3}
-  text: You can move <b>FORWARD</b>, or you can move <b>RIGHT</b>.
+  text: i'm outside of the SAC door again. i should go <b>forward</b> toward it.
   hide: 
   moveList:
   - forward
-  - right
+  - back
   useList: []
   lookList: []
   takeList: []
@@ -7217,6 +7293,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1171827405}
   - component: {fileID: 1171827404}
+  - component: {fileID: 1171827406}
   m_Layer: 0
   m_Name: TextParser
   m_TagString: Untagged
@@ -7243,6 +7320,19 @@ MonoBehaviour:
   latest4: {fileID: 1636715325}
   latest5: {fileID: 1821596670}
   player: {fileID: 1756386182}
+  planter: {fileID: 0}
+  planterMonster: {fileID: 0}
+  bush: {fileID: 0}
+  bushMonster: {fileID: 0}
+  box: {fileID: 0}
+  boxMonster: {fileID: 0}
+  trashcan: {fileID: 0}
+  trashcanMonster: {fileID: 0}
+  ITCodeButton: {fileID: 0}
+  superAdminButton: {fileID: 0}
+  dumpCommand: {fileID: 0}
+  notReadyDump: {fileID: 0}
+  monster: {fileID: 0}
 --- !u!4 &1171827405
 Transform:
   m_ObjectHideFlags: 0
@@ -7255,8 +7345,104 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1171827406
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171827403}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 2b943d3f89fd5fb47960b2074e5038a9, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1189153975
 GameObject:
   m_ObjectHideFlags: 0
@@ -7904,7 +8090,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1782221642}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1316528812
 MonoBehaviour:
@@ -7921,11 +8107,11 @@ MonoBehaviour:
   x: 0
   y: 0
   sprite: {fileID: 21300000, guid: eaafefe8c07858243a9aa036025646ef, type: 3}
-  text: You arrive at the exit of the SAC. Moving <b>FORWARD</b> will take you outside.
+  text: this is the exit of the SAC. i don't need to leave right now, so i can only
+    go <b>forward</b> to go back inside.
   hide: 
   moveList:
   - forward
-  - back
   useList: []
   lookList: []
   takeList: []
@@ -8220,7 +8406,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You can move <b>FORWARD</b>, or you can move <b>RIGHT</b>.
+  m_Text: i'm back in the SAC. i should try that door again. i can move <b>forward</b>.
 --- !u!222 &1331348791
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9002,7 +9188,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 257696757}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ALBehaviors, Assembly-CSharp
         m_MethodName: pressFirst
         m_Mode: 1
@@ -9292,7 +9478,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 257696757}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ALBehaviors, Assembly-CSharp
         m_MethodName: pressSecond
         m_Mode: 1
@@ -9399,7 +9585,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 40919432116d45a468f29da7a10f87bd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eaafefe8c07858243a9aa036025646ef, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9435,7 +9621,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1630186418
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9894,7 +10080,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 257696757}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ALBehaviors, Assembly-CSharp
         m_MethodName: onUpdate
         m_Mode: 5
@@ -10136,6 +10322,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1756386183}
   - component: {fileID: 1756386182}
+  - component: {fileID: 1756386184}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -10159,7 +10346,14 @@ MonoBehaviour:
   plant: 0
   progress: 0
   id: 0
+  hidden: 0
   current: {fileID: 0}
+  monsterSound: {fileID: 0}
+  transitionSound: {fileID: 0}
+  deathSound: {fileID: 0}
+  deathSprite: {fileID: 0}
+  monster: {fileID: 0}
+  endingTime: 0
 --- !u!4 &1756386183
 Transform:
   m_ObjectHideFlags: 0
@@ -10172,8 +10366,104 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1756386184
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756386181}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c81e6a5451b3a434d80cf8c21aa78db6, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1757681703
 GameObject:
   m_ObjectHideFlags: 0
@@ -10299,14 +10589,15 @@ Transform:
   m_LocalPosition: {x: 574.6407, y: 297.53766, z: -33.490723}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1083898188}
-  - {fileID: 210889696}
-  - {fileID: 859937457}
+  - {fileID: 1316528811}
   - {fileID: 2025830462}
   - {fileID: 165819421}
-  - {fileID: 1316528811}
+  - {fileID: 859937457}
+  - {fileID: 1083898188}
+  - {fileID: 210889696}
+  - {fileID: 2015544081}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1795534745
 GameObject:
@@ -10615,7 +10906,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: this is the map page.
+  m_Text: 'ERROR: FEATURE NOT AVAILABLE.'
 --- !u!222 &1841374378
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11423,6 +11714,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1976190625}
   m_CullTransparentMesh: 1
+--- !u!1 &2015544080
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2015544081}
+  - component: {fileID: 2015544082}
+  m_Layer: 0
+  m_Name: SAC Secret
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2015544081
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015544080}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1782221642}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2015544082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015544080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7aacaa7799d5c4aa4539c949278b67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 0
+  y: 0
+  sprite: {fileID: 21300000, guid: 66e5abd12d2d3674797ba44f96a4df8f, type: 3}
+  text: inside of the SAC is an empty room. it feels... perfect, and beaurocratic.
+    there are some <b>monsters</b> in here, and a <b>TV</b>. it looks like they want
+    something???
+  hide: 
+  moveList: []
+  useList:
+  - item: plant
+    result: you use the plant. tadaaaaaaaaa. good ending.
+  lookList:
+  - item: TV
+    result: the tv flickers and jumps.
+  - item: monsters
+    result: there are a lot of those monsters in here. they... don't seem to be angry,
+      though.
+  takeList: []
 --- !u!1 &2025163477
 GameObject:
   m_ObjectHideFlags: 0
@@ -11531,7 +11883,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1782221642}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2025830463
 MonoBehaviour:
@@ -11547,9 +11899,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   y: 0
-  sprite: {fileID: 21300000, guid: a778a4b79e7eb3e43ad879f4d5cf4152, type: 3}
-  text: 'Moving <b>FORWARD</b> would bring you to a desk, and to your <b>RIGHT</b>
-    is another hallway. '
+  sprite: {fileID: 21300000, guid: 26f7be7941a9f51418ad7b37cebee604, type: 3}
+  text: i'm in the sack reception again. i can move <b>forward</b> to look at the
+    desk, or <b>right</b> to go down the hallway.
   hide: 
   moveList:
   - forward

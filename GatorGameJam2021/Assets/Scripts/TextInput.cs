@@ -14,9 +14,23 @@ public class TextInput : MonoBehaviour
     public Text latest5;
     public Player player;
     public Sprite planter;
+    public Sprite planterMonster;
     public Sprite bush;
+    public Sprite bushMonster;
     public Sprite box;
+    public Sprite boxMonster;
     public Sprite trashcan;
+    public Sprite trashcanMonster;
+    public GameObject ITCodeButton;
+    public GameObject superAdminButton;
+    public GameObject dumpCommand;
+    public GameObject notReadyDump;
+    bool gotSticky;
+    bool gotTextbook;
+    public Monster monster;
+
+
+    AudioSource temp;
 
     public void onInput()
     {
@@ -33,10 +47,33 @@ public class TextInput : MonoBehaviour
             if(player.current.use != null && player.current.use.ContainsKey(args[1]))
             {
                 if(args[1] == "door") {
-                    SceneManager.LoadScene(player.current.use[args[1]]);
+                    if((SceneManager.GetActiveScene().name == "game_UI" || SceneManager.GetActiveScene().name == "game_UI_TWO" )&& player.current.name == "SAC Door")
+                    {
+                        if(SceneManager.GetActiveScene().name == "game_UI_TWO")
+                        {
+                            Tile newTile;
+                            newTile = player.map[player.current.x+1, player.current.y];
+                            player.changeLocation(newTile);
+                            cmdinput.text = player.current.text;
+                        }
+                        else
+                            cmdinput.text = player.current.use[args[1]];
+                    }
+                    else
+                    {
+                        temp.Play();
+                        SceneManager.LoadScene(player.current.use[args[1]]);
+                    }
                 }
                 else if(args[1] == "plant") {
-                    cmdinput.text = player.current.use[args[1]];
+                    if(player.plant)
+                    {
+                        SceneManager.LoadScene("winscreen");
+                    }
+                    else
+                    {
+                        cmdinput.text = "i don't have a plant to use.";
+                    }
                 }
             }
             else cmdinput.text = "I can't use a "+ args[1]+".";
@@ -52,16 +89,39 @@ public class TextInput : MonoBehaviour
         }
         else if(args[0].Equals("look"))
         {
-            Debug.Log(args[1]);
-            Debug.Log(player.current.look);
             if(player.current.look != null && player.current.look.ContainsKey(args[1]))
             {
-                cmdinput.text= player.current.look[args[1]];
+                if(args[1] == "desk") {
+                    ITCodeButton.SetActive(true);
+                }
+                else if(args[1] == "note") {
+                    gotSticky = true;
+                }
+                else if(args[1] == "textbook") {
+                    gotTextbook = true;
+                }
+                string temptext;
+                temptext = player.current.look[args[1]];
+                if(gotSticky && gotTextbook) {
+                    notReadyDump.SetActive(false);
+                    dumpCommand.SetActive(true);
+                    player.endingTime = true;
+                    temptext += "i should check the console now.";
+                }
+                cmdinput.text = temptext;
             }
             else cmdinput.text = "I can't look at a "+args[1]+".";
         }
         else if(args[0].Equals("move"))
         {
+           if(player.hidden && monster.aggressionChart[monster.aggressionIndex] == 3) {
+                player.die();
+                return;
+            }
+            else if(monster != null && monster.aggressionChart[monster.aggressionIndex] == 3) {
+                player.die();
+                return;
+            }
             if(player.current.moveList != null && System.Array.IndexOf(player.current.moveList, args[1]) > -1)
             {
                 Tile newTile;
@@ -91,22 +151,19 @@ public class TextInput : MonoBehaviour
             {
                 player.hidden = true;
                 if(args[1] == "planter") {
-                    player.hideLoc(planter);
+                    player.hideLoc(planter, planterMonster);
                 }
                 else if(args[1] == "bush") {
-                    player.hideLoc(bush);
+                    player.hideLoc(bush, bushMonster);
 
                 }
                 else if(args[1] == "box") {
-                    player.hideLoc(box);
+                    player.hideLoc(box, boxMonster);
 
                 }
                 else if(args[1] == "trashcan") {
-                    player.hideLoc(trashcan);
+                    player.hideLoc(trashcan, trashcanMonster);
                 }
-                
-                StartCoroutine(ExampleCoroutine());
-
             }
         }
         else
@@ -126,16 +183,9 @@ public class TextInput : MonoBehaviour
         latest1.text = cmdinput.text;
         cmdinput.text = "";
     }
-    
-    IEnumerator ExampleCoroutine()
+
+    void Start() 
     {
-        //Print the time of when the function is first called.
-        Debug.Log("Started Coroutine at timestamp : " + Time.time);
-
-        //yield on a new YieldInstruction that waits for 5 seconds.
-        yield return new WaitForSeconds(5);
-
-        //After we have waited 5 seconds print the time again.
-        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+        temp = gameObject.GetComponent<AudioSource>();
     }
 }

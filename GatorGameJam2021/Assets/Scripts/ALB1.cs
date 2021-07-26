@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ALB1 : MonoBehaviour
 {
     public bool firstscene = false;
+    public bool deskscene = false;
     public bool secondscene = false;
     public Button firstchoice;
     public Button secondchoice;
@@ -16,16 +17,25 @@ public class ALB1 : MonoBehaviour
     public string currentint = "";
     private string firstchoiceint = "NONE";
     private string secondchoiceint = "NONE";
+    public Player player;
+    public TextInput parser;
 
     public void onUpdate(string tilename)
     {
-        if(tilename == "01" && !firstscene)
+        tilename = player.current.name;
+        if(tilename == "SAC Door" && !firstscene)
         {
             currentint = "01-1";
             firstscene = true;
             chatFeeder();
         }
-        else if(tilename == "04" && !secondscene)
+        else if(tilename == "SAC Desk" && !deskscene)
+        {
+            currentint = "03-1";
+            deskscene = true;
+            chatFeeder();
+        }
+        else if(tilename == "Exit" && !secondscene)
         {
             currentint = "02-1";
             secondscene = true;
@@ -88,6 +98,8 @@ public class ALB1 : MonoBehaviour
                 mydialogue.text = "ugh. okay.";
                 firstchoiceint = "NONE";
                 secondchoiceint = "NONE";
+                parser.cmdinput.text = "alright. i guess i need to find the code on my own.";
+                parser.pushUp();
                 break;
             case "01-7":
                 fctext.text = "";
@@ -97,6 +109,8 @@ public class ALB1 : MonoBehaviour
                 mydialogue.text = "that sucks.";
                 firstchoiceint = "NONE";
                 secondchoiceint = "NONE";
+                parser.cmdinput.text = "alright. i guess i need to find the code on my own.";
+                parser.pushUp();
                 break;
             case "02-1": 
                 fctext.text = "did i ask?";
@@ -153,6 +167,42 @@ public class ALB1 : MonoBehaviour
                 aldialogue.text = "I HAVE AN IDEA.";
                 firstchoiceint = "NONE";
                 secondchoiceint = "NONE";
+                break;
+            case "03-1": 
+                fctext.text = "hey al, who has access to the SAC door code?";
+                sctext.text = "";
+                mydialogue.text = "";
+                aldialogue.text = "";
+                firstchoiceint = "03-2";
+                secondchoiceint = "NONE";
+                break;
+            case "03-2": 
+                fctext.text = "ugh.";
+                sctext.text = "how do i become the superadmin?";
+                mydialogue.text = "hey al, who has access to the SAC door code?";
+                aldialogue.text = "SAC EMPLOYEES AND THE SUPERADMIN.";
+                firstchoiceint = "03-3";
+                secondchoiceint = "03-4";
+                break;
+            case "03-3": 
+                fctext.text = "";
+                sctext.text = "";
+                mydialogue.text = "ugh.";
+                aldialogue.text = "YES.";
+                firstchoiceint = "NONE";
+                secondchoiceint = "NONE";
+                parser.cmdinput.text = "i guess i need to get superadmin privileges. maybe going to the computer lab will help.";
+                parser.pushUp();
+                break;
+            case "03-4": 
+                fctext.text = "";
+                sctext.text = "";
+                mydialogue.text = "how do i become the superadmin?";
+                aldialogue.text = "YOU DO NOT.";
+                firstchoiceint = "NONE";
+                secondchoiceint = "NONE";
+                parser.cmdinput.text = "we'll see about that. i should go over to the computer lab and poke around.";
+                parser.pushUp();
                 break;
             default: aldialogue.text = "error feeding chat at "+currentint; break;
         }
