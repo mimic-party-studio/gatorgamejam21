@@ -19,8 +19,8 @@ public class SceneGrid : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(SceneManager.GetActiveScene().name == "game_UI" || SceneManager.GetActiveScene().name == "game_UI_TWO") {
-            
+        if(SceneManager.GetActiveScene().name == "game_UI") {
+
             grid = new Tile[3, 3] {
                 {GetTile("Entrance"), GetTile("SAC Hall 1"), null},
                 {GetTile("SAC Door"), GetTile("SAC Hall 2"), GetTile("Exit")},
@@ -34,6 +34,28 @@ public class SceneGrid : MonoBehaviour
                 }
             }
         } 
+        }
+        if (SceneManager.GetActiveScene().name == "game_UI_TWO")
+        {
+
+            grid = new Tile[5, 3] {
+                {GetTile("Exit"), null, null},
+                {GetTile("SAC Hall 2"), GetTile("SAC Hall 1"),null},
+                {GetTile("SAC Desk"), GetTile("Entrance"), null },
+                {null, GetTile("SAC Door"),null, },
+                {null, GetTile("SAC Secret"),null, },
+            };
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    if (grid[i, j] != null)
+                    {
+                        grid[i, j].x = i;
+                        grid[i, j].y = j;
+                    }
+                }
+            }
         }
         if(SceneManager.GetActiveScene().name == "UI_second") {
             grid = new Tile[7, 2] {
@@ -63,9 +85,9 @@ public class SceneGrid : MonoBehaviour
                 {null, GetTile("Street 2"), null},
                 {GetTile("Plant Path 1"), GetTile("Street 3"), null},
                 {GetTile("Plant Path 2"), GetTile("Street 4"), null},
-                {GetTile("Grassy Sidepath 2"), GetTile("Crossroads 2"), GetTile("Stairs Path")},
-                {GetTile("Vending Path"), null,  GetTile("Stairs Path 2")},
-                {GetTile("Vending Path 2"), null, null}
+                {GetTile("Vending Path"), GetTile("Crossroads 2"), GetTile("Stairs Path")},
+                {GetTile("Vending Path 2"), null,  GetTile("Stairs Path 2")},
+                {GetTile("Exit"), null, null}
             };
             for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 3; j++) {

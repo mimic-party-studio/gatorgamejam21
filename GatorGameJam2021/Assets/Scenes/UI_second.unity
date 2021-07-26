@@ -1701,8 +1701,7 @@ MonoBehaviour:
   x: 0
   y: 0
   sprite: {fileID: 21300000, guid: f0cbc384440b6704797692a674dcd2d8, type: 3}
-  text: You enter the room. Something catches your eye from the other side. Perhaps
-    you should move <b>FORWARD</b>.
+  text: i'm in an empty computer lab. there's something ahead. i should go <b>forward</b>.
   hide: 
   moveList:
   - back
@@ -2428,7 +2427,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 257696755}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02bf421c6a0331341ae6c93fb63f9259, type: 3}
+  m_Script: {fileID: 11500000, guid: 639093b00289a3948a3b1777c1ec754a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   firstscene: 0
@@ -2866,7 +2865,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &328116822
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4611,8 +4610,8 @@ MonoBehaviour:
   x: 0
   y: 0
   sprite: {fileID: 21300000, guid: 85d204aeb8a71a046a72eabe20ccc244, type: 3}
-  text: You arrive in the lab. You can  move <b>FORWARD</b>, or <b>USE</b> the door
-    to leave.
+  text: the lab is too cold and too bright. i can move <b>forward</b> or use the
+    <b>door</b> to leave.
   hide: 
   moveList:
   - forward
@@ -5390,16 +5389,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   y: 0
-  sprite: {fileID: 21300000, guid: e1e2eb37dfa834d428030e2eddbf8466, type: 3}
-  text: There appears to be a <b>STICKY NOTE</b> that you could <b>LOOK</b> at. You
-    can only move <b>BACK</b> from here.
+  sprite: {fileID: 21300000, guid: ccb63daeb2cc0524c812b3435299ca3b, type: 3}
+  text: there's a <b>note</b> stuck to the computer. i could look at it, or i could
+    go <b>back</b>.
   hide: 
   moveList:
   - back
   useList: []
   lookList:
-  - item: sticky note
-    result: 'The sticky note reads as follows: hjkhkjhlhjhk'
+  - item: note
+    result: the note says people keep using the dump command  on the console. interesting...
   takeList: []
 --- !u!1 &782845339
 GameObject:
@@ -5931,8 +5930,7 @@ MonoBehaviour:
   x: 0
   y: 0
   sprite: {fileID: 21300000, guid: 2d3cb2d4e29617c42b54cb0c6a9d621d, type: 3}
-  text: 'There is a door in front of you. It''s the one you need to go in, you''re
-    certain. Move <b>FORWARD</b> to progress. '
+  text: there's a door here. i can go <b>forward</b> through it.
   hide: 
   moveList:
   - back
@@ -6489,8 +6487,8 @@ MonoBehaviour:
   x: 0
   y: 0
   sprite: {fileID: 21300000, guid: eace1a5fb53b5014c8ba3c3253038d08, type: 3}
-  text: You arrive at a <b>DOOR</b> ahead that you can <b>LOOK</b> at. You can also
-    move <b>RIGHT</b> into the hallway.
+  text: i'm in another hallway. i can move <b>forward</b> through a door, or <b>right</b>down
+    a hallway.
   hide: 
   moveList:
   - back
@@ -6940,8 +6938,7 @@ MonoBehaviour:
   x: 0
   y: 0
   sprite: {fileID: 21300000, guid: 760605ca91db60c4c92fece1a82e8a70, type: 3}
-  text: You see a computer sitting on the chair, but you need to move <b>FORWARD</b>
-    to reach it.
+  text: there's a computer on that chair. i can go <b>forward</b> toward it.
   hide: 
   moveList:
   - back
@@ -7136,10 +7133,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1024, y: 576}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -7369,6 +7366,11 @@ MonoBehaviour:
   boxMonster: {fileID: 0}
   trashcan: {fileID: 0}
   trashcanMonster: {fileID: 0}
+  ITCodeButton: {fileID: 0}
+  superAdminButton: {fileID: 0}
+  dumpCommand: {fileID: 1630186417}
+  notReadyDump: {fileID: 1009956474}
+  monster: {fileID: 0}
 --- !u!4 &1171827405
 Transform:
   m_ObjectHideFlags: 0
@@ -8388,8 +8390,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You arrive in the lab. You can  move <b>FORWARD</b>, or <b>USE</b> the
-    door to leave.
+  m_Text: the lab is too cold and too bright. i can move <b>forward</b> or use the
+    <b>door</b> to leave.
 --- !u!222 &1331348791
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9228,7 +9230,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 257696757}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ALBehaviors, Assembly-CSharp
         m_MethodName: pressFirst
         m_Mode: 1
@@ -9645,7 +9647,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 257696757}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ALBehaviors, Assembly-CSharp
         m_MethodName: pressSecond
         m_Mode: 1
@@ -9788,7 +9790,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1630186418
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10247,7 +10249,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 257696757}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ALBehaviors, Assembly-CSharp
         m_MethodName: onUpdate
         m_Mode: 5
@@ -10517,6 +10519,10 @@ MonoBehaviour:
   current: {fileID: 0}
   monsterSound: {fileID: 8300000, guid: c8c2f29943a9ef840b4b383e5ad2ba8e, type: 3}
   transitionSound: {fileID: 8300000, guid: c81e6a5451b3a434d80cf8c21aa78db6, type: 3}
+  deathSound: {fileID: 0}
+  deathSprite: {fileID: 0}
+  monster: {fileID: 0}
+  endingTime: 0
 --- !u!4 &1756386183
 Transform:
   m_ObjectHideFlags: 0
@@ -11013,7 +11019,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: this is the map page.
+  m_Text: 'ERROR: FEATURE NOT AVAILABLE.'
 --- !u!222 &1841374378
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11867,7 +11873,7 @@ MonoBehaviour:
   x: 0
   y: 0
   sprite: {fileID: 21300000, guid: f0b815b99052b384d86a046c4b313672, type: 3}
-  text: It's a long hallway. You can move <b>FORWARD</b>.
+  text: the hallway is long. i can move <b>forward</b> or <b>back</b>.
   hide: 
   moveList:
   - back
@@ -11999,17 +12005,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   y: 0
-  sprite: {fileID: 21300000, guid: abc60e4867774054f9c8d3e72d21578d, type: 3}
-  text: It's a deadend you can only move <b>BACK</b>. However, there appears to be
-    a <b>TEXTBOOK</b> that you can <b>LOOK</b> at.
+  sprite: {fileID: 21300000, guid: 1ae74ec969eccbd448d93ca3dbe2933d, type: 3}
+  text: i'm at a dead end. i can only go <b>back</b>. there's a <b>textbook</b> on
+    the floor... maybe i should check it out.
   hide: 
   moveList:
   - back
   useList: []
   lookList:
   - item: textbook
-    result: Within the textbook you find a marked page. On it, there is a command
-      circled. Perhaps you should keep this in mind.
+    result: it looks like there's a lesson about dumping databases. i'll remember
+      this.
   takeList: []
 --- !u!1 &2046958024
 GameObject:

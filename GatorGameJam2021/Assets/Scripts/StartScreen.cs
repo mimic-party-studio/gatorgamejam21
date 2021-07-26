@@ -7,7 +7,7 @@ public class StartScreen : MonoBehaviour
 {
     public void StartGame ()
     {
-        SceneManager.LoadScene("first_area");
+        SceneManager.LoadScene("game_UI");
     }
 
     public void QuitGame ()

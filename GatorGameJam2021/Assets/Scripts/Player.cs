@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
     public Sprite deathSprite;
     public Monster monster;
     Coroutine currRoutine;
+    public bool endingTime;
 
      public void changeLocation(Tile tile)
     {
@@ -40,7 +41,16 @@ public class Player : MonoBehaviour
         audioPlayer.Play();     
         //Debug.Log(location.image.sprite);   
         //location.text.text = tile.text;
-        monster.aggressionIndex += 1;
+        if(SceneManager.GetActiveScene().name == "UI_outside") {
+            if(monster.aggressionChart.Length > monster.aggressionIndex +1) {
+                monster.aggressionIndex += 1;
+                monster.scary.Play();
+            }
+            else {
+                monster.aggressionIndex = 0;
+                monster.aggressionChart = monster.options[Random.Range(0,2)];
+            }
+        }
     }
 
     public void changeLocBack(Tile tile)
@@ -48,6 +58,15 @@ public class Player : MonoBehaviour
         current= path.Peek();
         location.image.sprite = tile.sprite;
         audioPlayer.Play();     
+        if(SceneManager.GetActiveScene().name == "UI_outside") {
+            if(monster.aggressionChart.Length > monster.aggressionIndex +1) {
+                monster.aggressionIndex += 1;
+                monster.scary.Play();
+            }
+            else {
+                monster.aggressionIndex = 0;
+            }
+        }
 
     }
 
@@ -90,6 +109,7 @@ public class Player : MonoBehaviour
         audioPlayer.clip = transitionSound;
         location.image.sprite = tempSprite;
         hidden = false;
+        monster.aggressionIndex = 0;
     }
     IEnumerator DeathScreen(Sprite dead)
     {

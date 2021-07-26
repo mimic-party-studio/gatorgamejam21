@@ -1215,8 +1215,8 @@ MonoBehaviour:
   x: 0
   y: 0
   sprite: {fileID: 21300000, guid: d6d79558d9b83df41ac5a5bc7505d587, type: 3}
-  text: You arrive outside the SAC. You can move <b>RIGHT</b>.  I guess I can go
-    back in by <b>USE</b>ing the door, though.
+  text: i'm outside the building. i can move <b>right</b> down the path, or use the
+    <b>door</b> to go back inside.
   hide: 
   moveList:
   - right
@@ -1271,7 +1271,7 @@ MonoBehaviour:
   x: 0
   y: 0
   sprite: {fileID: 21300000, guid: 3d0c05ab3c12ccb4b8a4c27ba60eae13, type: 3}
-  text: You can move <b>FORWARD</b>.
+  text: i'm heading toward the stairs. i can go <b>forward</b> or <b>back</b>.
   hide: 
   moveList:
   - back
@@ -1404,7 +1404,7 @@ MonoBehaviour:
   x: 0
   y: 0
   sprite: {fileID: 21300000, guid: 251bf6efe8d52884383a6d78ecda6fba, type: 3}
-  text: You can move <b>FORWARD</b>.
+  text: i'm at the end of the street. i can move <b>forward</b> onto the sidwalk.
   hide: 
   moveList:
   - back
@@ -1865,8 +1865,8 @@ MonoBehaviour:
   x: 0
   y: 0
   sprite: {fileID: 21300000, guid: fe16696cd03a20a4381a3790662bdabd, type: 3}
-  text: In front of you is the entrance to the lab. You may <b>USE</b> the door to
-    enter the lab.
+  text: i've reached the door. i can use the <b>door</b> to go inside, or i can go
+    <b>back</b>.
   hide: 
   moveList:
   - back
@@ -2112,7 +2112,8 @@ MonoBehaviour:
   x: 0
   y: 0
   sprite: {fileID: 21300000, guid: 1614c536a0543484f8c35d2521d6ea0b, type: 3}
-  text: You can move <b>LEFT</b> or you can move <b>FORWARD</b>. You may also <b>HIDE</b>.
+  text: i'm in the courtyard. i can move <b>left</b>, <b>forward</b>, or <b>back</b>, 
+    or i can hide behind the <b> planter</b>.
   hide: planter
   moveList:
   - forward
@@ -2652,6 +2653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstscene: 0
+  deskscene: 0
   secondscene: 0
   firstchoice: {fileID: 1494513911}
   secondchoice: {fileID: 1563374454}
@@ -2660,6 +2662,8 @@ MonoBehaviour:
   aldialogue: {fileID: 366711642}
   mydialogue: {fileID: 1442219862}
   currentint: 
+  player: {fileID: 0}
+  parser: {fileID: 0}
 --- !u!1 &278091000
 GameObject:
   m_ObjectHideFlags: 0
@@ -3114,7 +3118,7 @@ MonoBehaviour:
   x: 0
   y: 0
   sprite: {fileID: 21300000, guid: 17844e22602c11f428c7d639764165ae, type: 3}
-  text: It's a grassy path. You can move <b>FORWARD</b>.
+  text: i'm on the grassy left path. i can move <b>forward</b>.
   hide: 
   moveList:
   - back
@@ -3140,7 +3144,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &328116822
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3313,7 +3317,7 @@ MonoBehaviour:
   x: 0
   y: 0
   sprite: {fileID: 21300000, guid: 8848ee5fb23659b478c0a9bb2d1479aa, type: 3}
-  text: You approach the street. You can move <b>FORWARD</b>.
+  text: i'm on the street. i can go <b>forward</b> along it.
   hide: 
   moveList:
   - back
@@ -5413,11 +5417,12 @@ MonoBehaviour:
   x: 0
   y: 0
   sprite: {fileID: 21300000, guid: 17844e22602c11f428c7d639764165ae, type: 3}
-  text: It's a grassy path. You can move <b>FORWARD</b>.
+  text: i'm further on the grassy path. i can move <b>right</b> to meet back up with
+    the road.
   hide: 
   moveList:
   - back
-  - forward
+  - right
   useList: []
   lookList: []
   takeList: []
@@ -6358,7 +6363,7 @@ MonoBehaviour:
   x: 0
   y: 0
   sprite: {fileID: 21300000, guid: a3fd2230c3a04b948a03fd60b1c5d11b, type: 3}
-  text: You can move <b>FORWARD</b>.
+  text: i'm at some vending machines. i can move <b>forward</b> or <b>back</b>.
   hide: 
   moveList:
   - back
@@ -7292,10 +7297,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1024, y: 576}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -7450,8 +7455,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   y: 0
-  sprite: {fileID: 21300000, guid: ebf6f0c9cf2b3a64082024f031917bbc, type: 3}
-  text: You can move <b>FORWARD</b> or <b>LEFT</b>. You can also <b>HIDE</b>
+  sprite: {fileID: 21300000, guid: 2dcfbe5e97b928d4d9324523486a710a, type: 3}
+  text: i'm close to the end of the street.  i can go <b>forward</b>, or go <b>left</b>
+    onto a side path. i can hide inside a <b>trashcan</b>.
   hide: trashcan
   moveList:
   - back
@@ -7580,6 +7586,11 @@ MonoBehaviour:
   boxMonster: {fileID: 21300000, guid: 7ea72455764ee2040bf7810b46c4af56, type: 3}
   trashcan: {fileID: 21300000, guid: b1d752922fc85a648aca7694d5fbe1a7, type: 3}
   trashcanMonster: {fileID: 21300000, guid: e54a10362d28e4c4a968ce2a4821e51c, type: 3}
+  ITCodeButton: {fileID: 0}
+  superAdminButton: {fileID: 0}
+  dumpCommand: {fileID: 0}
+  notReadyDump: {fileID: 0}
+  monster: {fileID: 1578011255}
 --- !u!4 &1171827405
 Transform:
   m_ObjectHideFlags: 0
@@ -7852,8 +7863,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   y: 0
-  sprite: {fileID: 21300000, guid: 0902c83923c83f944aaa4289adc5a96d, type: 3}
-  text: You've reached a dead end. You can move <b>BACK</b>.
+  sprite: {fileID: 21300000, guid: 56b8becc5b51f3b4782e2f1f7e79bd91, type: 3}
+  text: the stairs are blocked off. there's... something here... but it won't go
+    past the caution tape. it figures.i can only go <b>back</b>.
   hide: 
   moveList:
   - back
@@ -8604,8 +8616,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You arrive outside the SAC. You can move <b>RIGHT</b>.  I guess I can go
-    back in by <b>USE</b>ing the door, though.
+  m_Text: 'i''m outside the building. i can move <b>right</b> down the path, or use
+    the <b>door</b> to go back inside.
+
+'
 --- !u!222 &1331348791
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9016,8 +9030,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   y: 0
-  sprite: {fileID: 21300000, guid: 26595b1bc178ec54dbaa8a4aacb5002f, type: 3}
-  text: You can move <b>FORWARD</b> or <b>HIDE</b>.
+  sprite: {fileID: 21300000, guid: 97a9a033f8eeabb4a859e9bd59b19934, type: 3}
+  text: i'm further along the street. i can move <b>forward,</b> or i can hide behind
+    the <b> box.
   hide: box
   moveList:
   - back
@@ -9526,7 +9541,7 @@ MonoBehaviour:
   x: 0
   y: 0
   sprite: {fileID: 21300000, guid: 3422d6d91b2a8a148b855ae63b342531, type: 3}
-  text: It's a crossroads. You can move <b>LEFT</b> or you can move <b>FORWARD</b>.
+  text: i'm at a fork in the path. i can move <b>left</b> or <b>forward</b>.
   hide: 
   moveList:
   - back
@@ -10174,6 +10189,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1578011256}
   - component: {fileID: 1578011255}
+  - component: {fileID: 1578011257}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Untagged
@@ -10195,6 +10211,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aggressionIndex: 0
   aggressionChart: 
+  status: {fileID: 504354529}
+  thePlayer: {fileID: 1756386181}
+  scary: {fileID: 0}
+  stage1: {fileID: 8300000, guid: e0073cbcc4314054f84a75499d9a7642, type: 3}
+  stage2: {fileID: 8300000, guid: 7489d02f388532f45b656903006c92f3, type: 3}
+  stage3: {fileID: 8300000, guid: c8c2f29943a9ef840b4b383e5ad2ba8e, type: 3}
 --- !u!4 &1578011256
 Transform:
   m_ObjectHideFlags: 0
@@ -10209,6 +10231,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1578011257
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578011254}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1593053730
 GameObject:
   m_ObjectHideFlags: 0
@@ -10302,7 +10420,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1630186418
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10554,7 +10672,7 @@ MonoBehaviour:
   x: 0
   y: 0
   sprite: {fileID: 21300000, guid: 87532c097fb88be44b634b37cb706a2f, type: 3}
-  text: It's a dead end. You can only move <b>BACK</b>.
+  text: it's a dead end. i can only go <b>back</b>.
   hide: 
   moveList:
   - back
@@ -10685,18 +10803,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   y: 0
-  sprite: {fileID: 21300000, guid: 458c5324f50ef5442a24a7cb8e702492, type: 3}
-  text: You can only move <b>BACK</b>. There is a <b>PLANT</b> you can look at.
+  sprite: {fileID: 21300000, guid: c7a7f84ad49c2d04bb58b3a3b6865431, type: 3}
+  text: i'm at the end of the side path. there is a <b>plant</b> here that somebody
+    left behind. i can go <b>back</b>.
   hide: 
   moveList:
   - back
   useList: []
   lookList:
   - item: plant
-    result: It looks like you can <b>TAKE</b> the <b>PLANT</b> with you.
+    result: it's a potted plant from the plant drop. i could take it... you know,
+      in case of emergencies.
   takeList:
   - item: plant
-    result: You took the plant.
+    result: i take the plant. i feel safer now.
 --- !u!1 &1669381088
 GameObject:
   m_ObjectHideFlags: 0
@@ -10821,8 +10941,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   y: 0
-  sprite: {fileID: 21300000, guid: f789a8283a7ef754e942f38526c729b3, type: 3}
-  text: You can move <b>FORWARD</b>.
+  sprite: {fileID: 21300000, guid: 798ae31141641de49bcfdb5a1b57dd1f, type: 3}
+  text: i'm next to the vending machines. i can move <b>forward</b> or <b>back</b>.
   hide: 
   moveList:
   - back
@@ -11057,8 +11177,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   y: 0
-  sprite: {fileID: 21300000, guid: d1d8ecf4cc12468429cf21503e6a35de, type: 3}
-  text: Looks like the only way is <b>FORWARD</b>.
+  sprite: {fileID: 21300000, guid: 1f23f28cc07c37146b5846710b67f12e, type: 3}
+  text: i'm in the gardens outside. i can only go <b>forward</b> or <b>back</b>.
   hide: 
   moveList:
   - forward
@@ -11329,6 +11449,7 @@ MonoBehaviour:
   deathSound: {fileID: 8300000, guid: c90535faee677a24b9edcba21b40b505, type: 3}
   deathSprite: {fileID: 21300000, guid: fa2a527bdae5a6648ba7aa8db82836ac, type: 3}
   monster: {fileID: 1578011255}
+  endingTime: 0
 --- !u!4 &1756386183
 Transform:
   m_ObjectHideFlags: 0
@@ -11802,7 +11923,7 @@ MonoBehaviour:
   x: 0
   y: 0
   sprite: {fileID: 21300000, guid: fe835ef1a1745e84fb68cfd5a822362e, type: 3}
-  text: You can move <b>FORWARD</b>.
+  text: i'm on a side path. i can move <b>forward</b> or <b>back</b>.
   hide: 
   moveList:
   - back
@@ -12038,7 +12159,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: this is the map page.
+  m_Text: 'ERROR: FEATURE NOT AVAILABLE.'
 --- !u!222 &1841374378
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12892,7 +13013,8 @@ MonoBehaviour:
   x: 0
   y: 0
   sprite: {fileID: 21300000, guid: 35d09cee9040a6c40b6c7776ee0c98d8, type: 3}
-  text: You can move <b>LEFT</b> or <b>RIGHT</b>. You can also <b>HIDE</b>.
+  text: i'm at another crossroads. i can move <b>left</b> or <b>right</b>, or i can
+    hide in the <b>bush</b>.
   hide: bush
   moveList:
   - back

@@ -1215,7 +1215,8 @@ MonoBehaviour:
   x: 0
   y: 0
   sprite: {fileID: 21300000, guid: b1c654accb89ec24ea28d6ba4da2b3cb, type: 3}
-  text: You are in a hallway. It looks like the only path is <b>FORWARD</b>.
+  text: i'm in a hallway. i can move <b>forward</b> toward the reception, or move
+    <b>back</b> down the hall.
   hide: 
   moveList:
   - forward
@@ -2408,16 +2409,19 @@ MonoBehaviour:
   x: 0
   y: 0
   sprite: {fileID: 21300000, guid: 8d822bcf26ad8864998be84ef4e2eeff, type: 3}
-  text: 'In front of you is a <b>DOOR</b>. '
+  text: this is the door to the student advocacy center. i can look at or use the
+    <b>door</b> or move <b> back</b>.
   hide: 
   moveList:
   - back
   useList:
   - item: door
-    result: The door is locked. You may want to go <b>BACK</b>.
+    result: the door is locked. it says i need an access code.... maybe i should
+      ask al?
   lookList:
   - item: door
-    result: This is a door to the SAC. It is locked. Maybe you should go <b>BACK</b>.
+    result: this is the door to the SAC. it's locked. i don't have the code right
+      now.
   takeList: []
 --- !u!1 &243811723
 GameObject:
@@ -2645,14 +2649,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstscene: 0
+  deskscene: 0
   secondscene: 0
-  firstchoice: {fileID: 1494513911}
-  secondchoice: {fileID: 1563374454}
+  firstchoice: {fileID: 0}
+  secondchoice: {fileID: 0}
   fctext: {fileID: 1481219804}
   sctext: {fileID: 381298034}
   aldialogue: {fileID: 366711642}
   mydialogue: {fileID: 1442219862}
   currentint: 
+  player: {fileID: 1756386182}
+  parser: {fileID: 1171827404}
 --- !u!1 &278091000
 GameObject:
   m_ObjectHideFlags: 0
@@ -3158,7 +3165,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &328116822
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6933,7 +6940,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: karkat
+  m_Text: bartho
 --- !u!222 &886188539
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8029,10 +8036,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1024, y: 576}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -8453,9 +8460,18 @@ MonoBehaviour:
   latest5: {fileID: 1821596670}
   player: {fileID: 1756386182}
   planter: {fileID: 0}
+  planterMonster: {fileID: 0}
   bush: {fileID: 0}
+  bushMonster: {fileID: 0}
   box: {fileID: 0}
+  boxMonster: {fileID: 0}
   trashcan: {fileID: 0}
+  trashcanMonster: {fileID: 0}
+  ITCodeButton: {fileID: 1311271139}
+  superAdminButton: {fileID: 328116821}
+  dumpCommand: {fileID: 0}
+  notReadyDump: {fileID: 0}
+  monster: {fileID: 0}
 --- !u!4 &1171827405
 Transform:
   m_ObjectHideFlags: 0
@@ -9028,12 +9044,16 @@ MonoBehaviour:
   x: 0
   y: 0
   sprite: {fileID: 21300000, guid: a65b9b2af9d5dbe42a0434279a997c35, type: 3}
-  text: You arrive at the desk.The only way to move is <b>BACK</b>
+  text: i'm behind the reception desk. i can move <b>back</b>, or i can look at the
+    <b>desk.</b>
   hide: 
   moveList:
   - back
   useList: []
-  lookList: []
+  lookList:
+  - item: desk
+    result: ' You see a pad of paper with ''144536''. It looks like this is the IT
+      guy''s user ID. Might as well give it a shot.'
   takeList: []
 --- !u!1 &1265071272
 GameObject:
@@ -9255,7 +9275,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1311271140
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9673,7 +9693,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You can move <b>FORWARD</b>, or you can move <b>RIGHT</b>.
+  m_Text: i need my accommodation letter from the SAC. i should move <b>forward</b>
+    to get to the door.
 --- !u!222 &1331348791
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10974,7 +10995,8 @@ MonoBehaviour:
   x: 0
   y: 0
   sprite: {fileID: 21300000, guid: eaafefe8c07858243a9aa036025646ef, type: 3}
-  text: You arrive at the exit of the SAC. <b>USE</b>ing the door will take you outside.
+  text: i am at the building exit. i can use the <b>door</b> to go outside, or go
+    <b>back</b>.
   hide: 
   moveList:
   - back
@@ -11155,7 +11177,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1630186418
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11959,6 +11981,12 @@ MonoBehaviour:
   id: 0
   hidden: 0
   current: {fileID: 0}
+  monsterSound: {fileID: 0}
+  transitionSound: {fileID: 0}
+  deathSound: {fileID: 0}
+  deathSprite: {fileID: 0}
+  monster: {fileID: 0}
+  endingTime: 0
 --- !u!4 &1756386183
 Transform:
   m_ObjectHideFlags: 0
@@ -12431,9 +12459,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   y: 0
-  sprite: {fileID: 21300000, guid: a778a4b79e7eb3e43ad879f4d5cf4152, type: 3}
-  text: 'Moving <b>FORWARD</b> would bring you to a desk, and to your <b>RIGHT</b>
-    is another hallway. '
+  sprite: {fileID: 21300000, guid: 26f7be7941a9f51418ad7b37cebee604, type: 3}
+  text: 'i am in the reception outside the SAC. i can move <b>forward</b> to snoop
+    at the reception desk, move <b>back,</b> or move <b>right</b> toward the door. '
   hide: 
   moveList:
   - forward
@@ -12670,7 +12698,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: this is the map page.
+  m_Text: 'ERROR: FEATURE NOT AVAILABLE.'
 --- !u!222 &1841374378
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13895,7 +13923,8 @@ MonoBehaviour:
   x: 0
   y: 0
   sprite: {fileID: 21300000, guid: 40919432116d45a468f29da7a10f87bd, type: 3}
-  text: You can move <b>FORWARD</b>, or you can move <b>RIGHT</b>.
+  text: i'm in the hallway outside the SAC. i can move <b>forward</b> to the door,
+    or i can move <right> down the hallway.
   hide: 
   moveList:
   - forward

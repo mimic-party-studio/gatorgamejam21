@@ -30,7 +30,7 @@ public class CharCreate : MonoBehaviour
         }
         else
         {
-            charname = "karkat";
+            charname = "bartho";
             inputscreen.SetActive(false);
             errorscreen.SetActive(true);
         }
